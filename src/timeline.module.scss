@@ -1,0 +1,186 @@
+:local {
+  [data-theme='default'] {
+    --caption-bg-color: hsl(0, 0%, 100%);
+    --table-tr-expanded-bg-color: hsl(0, 0%, 97%);
+    --table-scrollbar-track-bg: hsla(0, 0%, 0%, 0.05);
+    --loading-table-view-bg: hsl(0, 0%, 90%);
+    --loading-table-view-bg-highlight: hsl(0, 0%, 95%);
+    --timeline-before-bg-color: rgba(43, 43, 43, 0.2);
+  }
+
+  [data-theme='dark'] {
+    --caption-bg-color: hsl(0, 0%, 17%);
+    --table-tr-expanded-bg-color: hsl(0, 0%, 12%);
+    --table-scrollbar-track-bg: hsla(0, 0%, 0%, 0.7);
+    --loading-table-view-bg: hsl(0, 0%, 15%);
+    --loading-table-view-bg-highlight: hsl(0, 0%, 20%);
+    --timeline-before-bg-color: rgba(43, 43, 43, 0.75);
+  }
+
+  .timeline__before {
+    background-color: var(--timeline-before-bg-color);
+    opacity: 0.5;
+  }
+
+  .timeline__today {
+    background-color: rgba(128, 143, 255, 0.5);
+    font-weight: 700;
+    border-radius: 0.25rem;
+  }
+
+  .timeline__inRange {
+    border-color: rgb(255, 215, 0);
+    border-style: solid;
+    border-left-style: none;
+    border-right-style: none;
+
+    .stackedBar__day {
+      margin-bottom: 0rem;
+    }
+  }
+
+  .timeline__today.timeline__inRange {
+    background-color: rgba(128, 143, 255, 0.5);
+    border-radius: 0rem;
+    border-color: rgb(255, 215, 0);
+  }
+
+  .timelineContainer {
+    background: var(--nav-bg-color);
+    display: flex;
+    height: 15rem;
+    margin: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+    z-index: 4;
+  }
+
+  .timelineLoadingBar {
+    height: 100%;
+    width: 100%;
+    background: var(--loading-table-view-bg);
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        0deg,
+        var(--loading-table-view-bg),
+        var(--loading-table-view-bg-highlight),
+        var(--loading-table-view-bg)
+      );
+      animation: progress 1s ease-in-out infinite;
+    }
+  }
+
+  @keyframes progress {
+    0% {
+      transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+      transform: translate3d(0, 100%, 0);
+    }
+  }
+
+  .timeline__startOfMonth {
+    border-left-style: dashed;
+    border-left-width: 1px;
+  }
+
+  .timelineAxis {
+    border-bottom: 1px dashed #c4c4c4;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+  }
+
+  .stackedBar__tooltip {
+    position: absolute;
+  }
+
+  .stackedBarTooltip {
+    background-color: var(--caption-bg-color);
+    border-radius: 0.25rem;
+    // border-style: solid;
+    color: var(--primary-text-color);
+    padding: 0.5rem;
+    text-align: left;
+  }
+
+  .stackedBarTooltip__date {
+    border-bottom-style: solid;
+    border-bottom-width: 0.25px;
+    text-align: center;
+    padding-bottom: 0.25rem;
+  }
+
+  .stackedBarTooltip__table {
+    padding-top: 0.125rem;
+  }
+
+  .stackedBarTooltip__labelCell {
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .stackedBarTooltip__countCell {
+    width: 2rem;
+    text-indent: 1rem;
+  }
+
+  .stackedBar__container {
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column-reverse;
+
+    &:hover {
+      border-left-color: inherit;
+      border-right-color: inherit;
+      border-radius: 0.25rem;
+      border-style: solid;
+
+      .stackedBar__day {
+        margin-bottom: 0rem;
+      }
+    }
+
+    &:hover.timeline__inRange {
+      border-radius: 0rem;
+    }
+  }
+
+  .stackedBar {
+    align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 0.35rem;
+  }
+
+  .stackedBar__bar {
+    margin: 0;
+    width: 1rem;
+  }
+
+  .stackedBar__day {
+    margin-top: 0.25rem;
+    margin-bottom: 0.1rem;
+    font-size: 0.75rem;
+  }
+
+  .stackedBarTooltip__dot {
+    height: 0.6em;
+    width: 0.6em;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5em;
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "kronologic-infinite-timeline",
+  "version": "1.0.0",
+  "description": "An infinite time series bar chart made purely out of HTML, CSS, and Javascript",
+  "main": "index.js",
+  "author": "Matthew Rattray",
+  "license": "MIT",
+  "dependencies": {
+    "@mdi/js": "^5.9.55",
+    "@mdi/react": "^1.4.0",
+    "eslint": "^7.18.0",
+    "eslint-plugin-react": "^7.22.0",
+    "moment": "^2.27.0",
+    "react": "^16.13.1",
+    "react-window": "^1.8.5",
+    "sass": "^1.32.5",
+    "sass-loader": "^10.1.1",
+    "webpack": "^4.44.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@storybook/addon-actions": "^6.1.14",
+    "@storybook/addon-essentials": "^6.1.14",
+    "@storybook/addon-links": "^6.1.14",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "^6.1.14",
+    "babel-jest": "^26.3.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^5.0.1",
+    "jest": "^26.4.2",
+    "react-dom": "^16.13.1",
+    "react-is": "^16.13.1",
+    "react-test-renderer": "^16.13.1",
+    "style-loader": "^2.0.0"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "test": "jest"
+  }
+}
