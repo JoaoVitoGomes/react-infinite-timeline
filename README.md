@@ -1,4 +1,4 @@
-# Kronologic Infinite Timeline
+# Infinite Timeline
 
 An opensource timeline from Kronologic: https://www.kronologic.ai/
 
